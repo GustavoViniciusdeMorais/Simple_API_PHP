@@ -1,0 +1,26 @@
+{
+    "name": "gustavomorais/simpleapi",
+    "description": "Simple API Example",
+    "keywords": ["api", "simple"],
+    "homepage": "https://github.com/gustavoviniciusdemorais",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Gustavo Vinicius de Morais Pereira",
+            "homepage": "https://github.com/gustavoviniciusdemorais",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "gustavoviniciusmoraisti@gmail.com"
+    },
+    "autoload": {
+        "psr-4": {
+            "Gustavo\\Morais\\": "src/"
+        }
+    },
+    "version": "1.0.0",
+    "require": {
+        "bramus/router": "^1.6"
+    }
+}
