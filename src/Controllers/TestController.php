@@ -2,14 +2,16 @@
 
 namespace Gustavo\Morais\Controllers;
 
+use Gustavo\Morais\Actions\SearchUsersAction;
+
 class TestController
 {
-    public function index()
+    public static function index()
     {
-        echo "list all";
+        echo SearchUsersAction::run();
     }
 
-    public function show($id)
+    public static function show($id)
     {
         echo "show {$id}";
     }

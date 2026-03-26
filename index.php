@@ -1,12 +1,13 @@
 <?php
-require_once "src/Controllers/TestController.php";
-require __DIR__.'/vendor/autoload.php';
+
+require __DIR__ . '/vendor/autoload.php';
 
 use \Bramus\Router\Router;
+use Gustavo\Morais\Controllers\TestController;
 
 $router = new Router();
 
-$router->get('/test', '\Gustavo\Morais\Controllers\TestController@index');
-$router->get('/test/(\d+)', '\Gustavo\Morais\Controllers\TestController@show');
+$router->get('/test', function () { return TestController::index(); });
+$router->get('/test/(\d+)', function ($id) { return TestController::show($id); });
 
 $router->run();

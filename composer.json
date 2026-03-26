@@ -21,6 +21,7 @@
     },
     "version": "1.0.0",
     "require": {
-        "bramus/router": "^1.6"
+        "bramus/router": "^1.6",
+        "lorisleiva/laravel-actions": "^2.9"
     }
 }
