@@ -1,0 +1,32 @@
+name: Test Project
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    container:
+      image: php:8.1-cli
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          apt-get update
+          apt-get install -y git unzip
+          docker-php-ext-install pdo pdo_mysql
+
+      - name: Install Composer
+        run: |
+          curl -sS https://getcomposer.org/installer | php
+          mv composer.phar /usr/local/bin/composer
+
+      - name: Install PHPUnit
+        run: composer require --dev phpunit/phpunit ^10
+
+      - name: Run PHPUnit tests
+        run: ./vendor/bin/phpunit tests
